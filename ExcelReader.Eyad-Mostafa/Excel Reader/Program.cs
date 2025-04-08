@@ -14,7 +14,15 @@ internal class Program
         Console.WriteLine("\n[INFO] Reading From the file...");
         Console.ResetColor();
 
-        var employees = FileReader.ReadEmployees("employees.xlsx");
+        var employees = FileReader.ReadEmployees("Assets\\employees.xlsx");
+
+        if (employees.Count == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("[ERROR] No employees found");
+            Console.ResetColor();
+            return;
+        }
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("[SUCCESS] Reading completed.");

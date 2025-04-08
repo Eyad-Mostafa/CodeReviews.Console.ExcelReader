@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ExcelReader": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Eyad Mostafa\\source\\GitHub-C#Academy\\CodeReviews.Console.ExcelReader\\ExcelReader.Eyad-Mostafa\\Excel Reader"
+    }
+  }
+}

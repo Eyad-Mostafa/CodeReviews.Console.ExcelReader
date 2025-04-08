@@ -7,6 +7,7 @@ namespace Excel_Reader;
 internal class DatabaseManager
 {
     private const string ConnectionString = "Server=.\\MSSQLSERVER08;TrustServerCertificate=True;Integrated Security=True;";
+    private const string DatabaseConnectionString = "Server=.\\MSSQLSERVER08;Database=Employees;TrustServerCertificate=True;Integrated Security=True;";
 
     public static void SaveEmployees(List<Employee> employees)
     {
@@ -51,7 +52,7 @@ internal class DatabaseManager
 
     private static void CreateEmployeeTable()
     {
-        using var connection = new SqlConnection("Server=.\\MSSQLSERVER08;Database=Employees;TrustServerCertificate=True;Integrated Security=True;");
+        using var connection = new SqlConnection(DatabaseConnectionString);
         connection.Open();
 
         using var command = connection.CreateCommand();
@@ -67,7 +68,7 @@ internal class DatabaseManager
 
     private static void InsertEmployees(List<Employee> employees)
     {
-        using var connection = new SqlConnection("Server=.\\MSSQLSERVER08;Database=Employees;TrustServerCertificate=True;Integrated Security=True;");
+        using var connection = new SqlConnection(DatabaseConnectionString);
         connection.Open();
 
         using var transaction = connection.BeginTransaction();
@@ -104,7 +105,7 @@ internal class DatabaseManager
     {
         var employees = new List<Employee>();
 
-        using var connection = new SqlConnection("Server=.\\MSSQLSERVER08;Database=Employees;TrustServerCertificate=True;Integrated Security=True;");
+        using var connection = new SqlConnection(DatabaseConnectionString);
         connection.Open();
 
         using var command = connection.CreateCommand();
