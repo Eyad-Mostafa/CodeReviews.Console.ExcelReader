@@ -31,11 +31,7 @@ cd ExcelReader
 
 ### 2️⃣ **Place the employees Excel file**
 
-Ensure your **`employees.xlsx`** file is inside the following directory:
-
-```sh
-{YourProjectDirectory}\bin\Debug\net8.0\employees.xlsx
-```
+Ensure your **`employees.xlsx`** file is inside the Assets:
 
 ### 3️⃣ **Run the project**
 
